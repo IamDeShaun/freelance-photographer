@@ -44,7 +44,14 @@ if ( ! function_exists( 'freelance_photographer_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'freelance-photographer' ),
+			'my-menu' => esc_html__( 'Primary', 'freelance-photographer' ),
+		) );
+
+		// Register Custom Navigation Walker
+		require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+		register_nav_menus( array(
+			'my-menu' => __( 'Primary', 'simple-resume' ),
 		) );
 
 		/*
