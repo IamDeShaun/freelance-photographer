@@ -44,15 +44,29 @@ if ( ! function_exists( 'freelance_photographer_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'my-menu' => esc_html__( 'Primary', 'freelance-photographer' ),
+			'menu-1' => esc_html__( 'Primary', 'freelance-photographer' ),
 		) );
 
 		// Register Custom Navigation Walker
-		require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+		require_once get_template_directory() . '/bs4navwalker.php';
 
 		register_nav_menus( array(
-			'my-menu' => __( 'Primary', 'simple-resume' ),
+			'primary' => __( 'Primary', 'freelance-photographer' ),
 		) );
+	 
+		add_filter('nav_menu_css_class', 'add_classes_on_li', 1, 3);
+		function add_classes_on_li($classes, $item, $args)
+				{
+						$classes[] = 'nav-item';
+
+						return $classes;
+				}
+
+			add_filter('wp_nav_menu', 'add_classes_on_a');
+			function add_classes_on_a($ulclass)
+			{
+					return preg_replace('/<a /', '<a class="nav-link"', $ulclass);
+			}
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments

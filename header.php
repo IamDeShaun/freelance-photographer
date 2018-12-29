@@ -54,14 +54,14 @@
 						
 		   <?php
 								wp_nav_menu( array(
-									'theme_location'    => 'my-menu',
+									'theme_location'    => 'primary',
 									'depth'             => 2,
 									'container'         => 'div',
 									'container_class'   => 'collapse navbar-collapse',
 									'container_id'      => 'navbarsExample03',
 									'menu_class'        => 'nav navbar-nav ml-auto',
-									'walker'            => new WP_Bootstrap_Navwalker(),
-								) );
+									'walker'          => new bs4navwalker()
+									));
 								?>
         </div>
         </div>   

@@ -401,6 +401,9 @@ template {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+
+
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -929,7 +932,7 @@ object {
   }
   
   .site-hero {
-	background: url("../img/main-hero.jpg") no-repeat center center;
+	background: url("http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/main-hero.jpg") no-repeat center center;
 	background-size: cover;
 	overflow: hidden;
 	padding-top: 150px;
