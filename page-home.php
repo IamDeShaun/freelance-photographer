@@ -1,13 +1,36 @@
 <?php
 /* Template Name: Home */
 
+$photographer_name = get_field('photographer_name');
+$tagline = get_field('tagline');
+
+$shooter_name = get_field('shooter_name');
+$about_photographer = get_field('about_photographer');
+
+$gallery_image_a = get_field('gallery_image_a');
+$title_a = get_field('title_a');
+$gallery_image_b = get_field('gallery_image_b');
+$title_b = get_field('title_b');
+$gallery_image_c = get_field('gallery_image_c');
+$title_c = get_field('title_c');
+$link = get_field('link');
+
+$insta_image_a = get_field('insta_image_a');
+$insta_image_b = get_field('insta_image_b');
+$insta_image_c = get_field('insta_image_c');
+$insta_link = get_field('insta_link');
+
+
+
+
+
 get_header(); ?>
 
  <!-- Hero Section -->
  <div id="hero" class="site-hero">
         <div>
-          <h4>Photographer Name</h4>
-          <h3>Tagline Caption</h3>
+          <h4><?php echo $photographer_name; ?></h4>
+          <h3><?php echo $tagline; ?></h3>
         </div>
   </div>
   <!-- End Hero Section -->
@@ -20,14 +43,8 @@ get_header(); ?>
       </div>
       <div id="photometa" class="col-md-6 mr-auto">
         <div class="metacontainer">
-            <h4>Photographer Name</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla congue auctor. Nullam dictum cursus porttitor. Fusce sit amet est massa. Quisque sed lacinia turpis.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla congue auctor. Nullam dictum cursus porttitor. Fusce sit amet est massa. Quisque sed lacinia turpis.
-            </p>
-        </div>
+            <h4><?php echo $shooter_name; ?></h4>
+            <?php echo $about_photographer;?>
         </div>
     </div>
   </section>
@@ -44,34 +61,34 @@ get_header(); ?>
             <div class="content">
             <div class="content-overlay">
             </div>
-            <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/stock-img-2.jpeg">
+            <img class="content-image" src="<?php echo $gallery_image_a ['url'] ?>" alt="<?php echo $gallery_image_a ['alt'] ?>">
             <div class="content-details fadeIn-bottom">
-                <h3 class="content-title">This is a title</h3>
-                <p class="content-text">This is a short description</p>
+                <h3 class="content-title"><?php echo $title_a; ?></h3>
+               
               </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-12">
             <div class="content">
                 <div class="content-overlay"></div>
-            <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/stock-img-3.jpeg">
+            <img class="content-image" src="<?php echo $gallery_image_b ['url'] ?>" alt="<?php echo $gallery_image_b ['alt'] ?>">
             <div class="content-details fadeIn-bottom">
-                <h3 class="content-title">This is a title</h3>
-                <p class="content-text">This is a short description</p>
+                <h3 class="content-title"><?php echo $title_b; ?></h3>
+               
               </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-12">
             <div class="content">
                 <div class="content-overlay"></div>
-            <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/stock-img-4.jpeg">
+            <img class="content-image" src="<?php echo $gallery_image_c ['url'] ?>" alt="<?php echo $gallery_image_c ['alt'] ?>">
             <div class="content-details fadeIn-bottom">
-                <h3 class="content-title">This is a title</h3>
-                <p class="content-text">This is a short description</p>
+                <h3 class="content-title"><?php echo $title_c; ?></h3>
+               
               </div>
             </div>
         </div> 
-        <a href="gallery.html"><h5>View Full Gallery </h5></a>
+        <a href="<?php echo $link; ?>"><h5>View Full Gallery </h5></a>
       </div>
      
     </div>
@@ -89,21 +106,21 @@ get_header(); ?>
       <div class="row">
         <div class="col-lg-4 col-md-12">
           <div class="content">
-              <img class="img-fluid" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-1.jpeg" alt="Image Placeholder">
+              <img class="img-fluid" src="<?php echo $insta_image_a ['url'] ?>" alt="<?php echo $insta_image_a ['alt'] ?>">
           </div>
         </div>
         <div class="col-lg-4 col-md-12">
             <div class="content">
-                <img class="img-fluid" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-2.jpeg" alt="Image Placeholder">
+                <img class="img-fluid" src="<?php echo $insta_image_b ['url'] ?>" alt="<?php echo $insta_image_b ['alt'] ?>">
             </div>
           </div>
           <div class="col-lg-4 col-md-12">
               <div class="content">
-                  <img class="img-fluid" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-3.jpeg" alt="Image Placeholder">
+                  <img class="img-fluid" src="<?php echo $insta_image_c ['url'] ?>" alt="<?php echo $insta_image_c ['alt'] ?>">
               </div>
             </div>
       </div>
-      <a class="igstyle big white" href="#">
+      <a class="igstyle big white" href="<?php echo $insta_link; ?>">
           <i class="fab fa-instagram"></i>
           <span>follow me</span>
       </a>
