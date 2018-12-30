@@ -951,7 +951,7 @@ object {
   }
   
   #photogid {
-	background: url("../img/photographer-profile.jpeg") no-repeat center center;
+	background: url("http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/photographer-profile.jpeg") no-repeat center center;
 	min-height: 500px;
 	background-size: cover;
 	background-attachment: scroll;
@@ -1016,9 +1016,9 @@ object {
   .content {
 	position: relative;
 	width: 100%;
-	max-width: 400px;
 	margin: auto;
 	overflow: hidden;
+	margin-bottom: 10px;
   }
   
   .content .content-overlay {
@@ -1092,6 +1092,9 @@ object {
   
   #homegallery img {
 	max-width: 100%;
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
   }
   
   #homegallery h4 {
@@ -1101,15 +1104,19 @@ object {
   }
   
   #homegallery .container .row h5 {
-	font-size: 1rem;
+	font-size: 1.5rem;
 	margin-bottom: 30px;
 	font-weight: 700;
 	margin: auto;
+	padding-top: 10px;
   }
   
-  #homegallery .container .row a {
+  #homegallery .container .row a{
 	color: #1b1818;
 	margin: auto;
+	font-weight: 800;
+	padding-top: 10px;
+	text-align: center;
   }
   
   #homegallery .container .row a:hover {
@@ -1206,7 +1213,7 @@ object {
 	background: #fff;
 	height: auto;
 	margin: auto;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 	padding: 10px;
   }
   #price .redline {

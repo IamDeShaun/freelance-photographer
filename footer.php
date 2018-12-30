@@ -11,25 +11,16 @@
 
 ?>
 
-	</div><!-- #content -->
+<div class="back-to-top" title="Go to top" style="display: block;">
+    <i class="fa fa-chevron-up"></i>
+  </div>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'freelance-photographer' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'freelance-photographer' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'freelance-photographer' ), 'freelance-photographer', '<a href="http://www.deshaunjones.com">DeShaun Jones</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
+   <!-- Footer Area-->
+   <footer class="footer text-center">
+      <div class="container">
+        Developed by <a href="http://www.deshaunjones.com" target="_blank">DeShaun Jones</a>
+      </div>
+  </footer>
 <?php wp_footer(); ?>
 
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
