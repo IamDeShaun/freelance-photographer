@@ -137,121 +137,50 @@ get_header(); ?>
       <h3>Hot Prices</h3>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="card pricing-item">
-              <div class="card-body">
-                <div class="uppercase">
-                  outdoor session
-                </div>
-              <div class="price">
-                49
-                <span>$</span>
-              </div>
-            <h6>Beautifull</h6>
-              </div> <!-- End Card Body-->
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
-              <div class="card-body">
-            
-              </div>
-            </div>
-      </div>
+
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+               
+               <?php the_content(); ?>
+           
+             <?php endwhile; endif; ?>
+
+             <?php 
+                    $args = array(
+                    'post_type' => 'prices',
+                    'order' => 'ASC'
+                    );
+                    $query = new WP_Query( $args );
+                    $price_title = get_field('price_title');
+                    $cost = get_field('cost');
+                    $price_tagline = get_field('price_tagline');
+                    $price_description = get_field('price_description');
+                    ?>
+
+              <?php if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
 
       <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card pricing-item">
               <div class="card-body">
                 <div class="uppercase">
-                  portrait session
+                <?php the_field('price_title'); ?>
                 </div>
               <div class="price">
-                99
+                <?php the_field('cost'); ?>
                 <span>$</span>
               </div>
-            <h6>Unforgetable</h6>
+            <h6><?php the_field('price_tagline'); ?></h6>
               </div> <!-- End Card Body-->
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
+
               <div class="card-body">
-            
+            <?php the_field('price_description'); ?>
               </div>
             </div>
       </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="card pricing-item">
-              <div class="card-body">
-                <div class="uppercase">
-                    studio session
-                </div>
-              <div class="price">
-                129
-                <span>$</span>
-              </div>
-            <h6>Fashionable</h6>
-              </div> <!-- End Card Body-->
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
-              <div class="card-body">
-            
-              </div>
-            </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="card pricing-item">
-              <div class="card-body">
-                <div class="uppercase">
-                  ultimate session
-                </div>
-              <div class="price">
-                169
-                <span>$</span>
-              </div>
-            <h6>Unstoppable</h6>
-              </div> <!-- End Card Body-->
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
-              <div class="card-body">
-            
-              </div>
-            </div>
-      </div>
-
-    
-
-    </div>
+      <?php endwhile; endif; wp_reset_postdata(); ?>
+    </div>  
   </div>
  </section>
  <!-- End Price Cards Section-->
-
-
-
-
-
-
-
-
-
 
 <!-- Footer Section-->
 <?php get_footer(); ?>
