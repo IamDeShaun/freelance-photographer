@@ -748,7 +748,15 @@ object {
   
   body > .container {
 	padding: 60px 15px 0;
-  }
+	}
+	
+	.center {
+		text-align: center;
+		font-size: 1.5rem;
+		font-size: 600;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
   
   /*--------------------------------------------------------------
   # Header
@@ -1317,7 +1325,6 @@ object {
   }
   #gallery-portfolio img {
 	width: 100%;
-	margin-bottom: 5px;
   }
   #gallery-portfolio h4 {
 	padding-top: 20px;

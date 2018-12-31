@@ -14,47 +14,125 @@ get_header();
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
+				
+
+				<div class="container">
+
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'freelance-photographer' ); ?></h1>
+					<h3 class="page-title center"><?php esc_html_e( 'Oops! That page can&rsquo;t be found. While your here check out my photo gallery.', 'freelance-photographer' ); ?></h3>
 				</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'freelance-photographer' ); ?></p>
+      <div class="row">
+        <div class="col-lg-4">
+            <div class="content">
+                <div class="content-overlay">
+                </div>
+                <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-1.jpeg" alt="Gallery Photo Placeholder">
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">This is a title</h3>
+                   
+                  </div>
+                </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="content">
+                <div class="content-overlay">
+                </div>
+                <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-2.jpeg" alt="Gallery Photo Placeholder">
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">This is a title</h3>
+                    
+                  </div>
+                </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="content">
+                <div class="content-overlay">
+                </div>
+                <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-3.jpeg" alt="Gallery Photo Placeholder">
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">This is a title</h3>
+                   
+                  </div>
+                </div>
+        </div>
+      </div> <!-- End Row-->
+      <div class="row">
+        <div class="col-lg-4">
+            <div class="content">
+                <div class="content-overlay">
+                </div>
+                <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-4.jpeg" alt="Gallery Photo Placeholder">
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">This is a title</h3>
+                    
+                  </div>
+                </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="content">
+                <div class="content-overlay">
+                </div>
+                <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/gallery-5.jpeg" alt="Gallery Photo Placeholder">
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">This is a title</h3>
+                
+                  </div>
+                </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="content">
+                <div class="content-overlay">
+                </div>
+                <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/stock-img-11.jpeg" alt="Gallery Photo Placeholder">
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">This is a title</h3>
+                    
+                  </div>
+                </div>
+        </div>
+      </div><!-- End Row-->
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="content">
+                  <div class="content-overlay">
+                  </div>
+                  <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/stock-img-12.jpeg" alt="Gallery Photo Placeholder">
+                  <div class="content-details fadeIn-bottom">
+                      <h3 class="content-title">This is a title</h3>
+                      
+                    </div>
+                  </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="content">
+                  <div class="content-overlay">
+                  </div>
+                  <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/stock-img-4.jpeg" alt="Gallery Photo Placeholder">
+                  <div class="content-details fadeIn-bottom">
+                      <h3 class="content-title">This is a title</h3>
+                    
+                    </div>
+                  </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="content">
+                  <div class="content-overlay">
+                  </div>
+                  <img class="content-image" src="http://localhost/photography-theme/wordpress/wp-content/uploads/2018/12/stock-img-10.jpeg" alt="Gallery Photo Placeholder">
+                  <div class="content-details fadeIn-bottom">
+                      <h3 class="content-title">This is a title</h3>
+                     
+                    </div>
+                  </div>
+          </div>
+        </div><!-- End Row-->
+    </div>
 
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'freelance-photographer' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$freelance_photographer_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'freelance-photographer' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$freelance_photographer_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_footer();
+get_footer(); ?>
