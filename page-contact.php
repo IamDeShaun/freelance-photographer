@@ -1,6 +1,8 @@
 <?php
 /* Template Name: Contact */
 
+$contact_info = get_field('contact_info');
+
 get_header(); ?>
 
 <section class="contact">
@@ -13,13 +15,7 @@ get_header(); ?>
 
       <div class="row">
           <div id="contactmeta" class="col-md-6">
-              <h3>Drop Us A Line</h3>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla congue auctor. Nullam dictum cursus porttitor. Fusce sit amet est massa. Quisque sed lacinia turpis.
-              </p>
-              <h4>Location: New York, NY</h4>
-              <h4>Phone: 555-555-5555</h4>
-              <h4>Email: mail@example.com</h4>
+             <?php echo $contact_info; ?>
 
           </div>
           <div id="contactform" class="col-md-6 mr-auto">
